@@ -1,0 +1,19 @@
+{
+    "@@locale": "vi",
+    "email": "Địa chỉ email",
+    "password": "Mật khẩu",
+    "forgot_password": "Quên mật khẩu?",
+    "remember_me": "Ghi nhớ đăng nhập",
+    "login": "Đăng nhập",
+    "sign_up": "Đăng ký",
+    "dont_have_account": "Bạn chưa có tài khoản?",
+    "sign_in": "Đăng nhập",
+    "change_language": "Thay đổi ngôn ngữ",
+    "login_screen": "Màn hình đăng nhập",
+    "confirm_new_password": "Xác nhận mật khẩu mới",
+    "create_account": "Tạo tài khoản",
+    "go_back_to_login": "Quay lại trang đăng nhập",
+    "password_validation_message": "Mật khẩu phải chứa ít nhất 8 ký tự, 1 số và 1 chữ in hoa",
+    "confirm_password_validation_message": "Xác nhận mật khẩu phải khớp với mật khẩu mới"
+  }
+  

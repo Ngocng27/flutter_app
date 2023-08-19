@@ -1,0 +1,19 @@
+{
+  "@@locale": "fr",
+  "email": "Adresse e-mail",
+  "password": "Mot de passe",
+  "forgot_password": "Mot de passe oublié",
+  "remember_me": "Se souvenir de moi",
+  "login": "CONNEXION",
+  "sign_up": "S'INSCRIRE",
+  "dont_have_account": "Vous n'avez pas de compte ?",
+  "sign_in": "Se connecter",
+  "change_language": "Changer de langue",
+  "login_screen": "Écran de connexion",
+  "confirm_new_password": "Confirmer le nouveau mot de passe",
+  "create_account": "Créer un compte",
+  "go_back_to_login": "Retourner à la page de connexion",
+  "password_validation_message": "Le mot de passe doit contenir au moins 8 caractères, 1 chiffre et 1 lettre majuscule",
+  "confirm_password_validation_message": "Le mot de passe de confirmation doit correspondre au nouveau mot de passe"
+
+}

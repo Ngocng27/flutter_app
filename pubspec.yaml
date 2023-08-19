@@ -1,0 +1,28 @@
+name: flutter_app
+description: A new Flutter project.
+# Add the following environment section with SDK constraint
+environment:
+  sdk: '>=2.12.0 <3.0.0' # Update the SDK version to enable null safety
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.18.0 # Update the intl version to match the flutter_localizations version
+  cupertino_icons: ^1.0.2
+  provider: ^6.0.5
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+  assets:
+    - lib/l10n/en.json
+    - lib/l10n/fr.json
+    - lib/l10n/ja.json
+    - lib/l10n/vi.json
+    - lib/l10n/es.json
+

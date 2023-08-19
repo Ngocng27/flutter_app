@@ -1,0 +1,19 @@
+{
+    "@@locale": "es",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "forgot_password": "¿Olvidaste tu contraseña?",
+    "remember_me": "Recuérdame",
+    "login": "Iniciar sesión",
+    "sign_up": "Registrarse",
+    "dont_have_account": "¿No tienes una cuenta?",
+    "sign_in": "Iniciar sesión",
+    "change_language": "Cambiar idioma",
+    "login_screen": "Pantalla de inicio de sesión",
+    "confirm_new_password": "Confirmar nueva contraseña",
+    "create_account": "Crear cuenta",
+    "go_back_to_login": "Volver a la página de inicio de sesión",
+    "password_validation_message": "La contraseña debe contener al menos 8 caracteres, 1 número y 1 letra mayúscula",
+    "confirm_password_validation_message": "La contraseña de confirmación debe coincidir con la nueva contraseña"
+  }
+  

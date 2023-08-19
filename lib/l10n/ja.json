@@ -1,0 +1,19 @@
+{
+    "@@locale": "ja",
+    "email": "メールアドレス",
+    "password": "パスワード",
+    "forgot_password": "パスワードを忘れましたか？",
+    "remember_me": "ログイン情報を記憶する",
+    "login": "ログイン",
+    "sign_up": "新規登録",
+    "dont_have_account": "アカウントをお持ちでないですか？",
+    "sign_in": "ログイン",
+    "change_language": "言語を変更する",
+    "login_screen": "ログイン画面",
+    "confirm_new_password": "新しいパスワードを確認",
+    "create_account": "アカウントを作成",
+    "go_back_to_login": "ログイン画面に戻る",
+    "password_validation_message": "パスワードは少なくとも8文字、1つの数字、1つの大文字の文字を含める必要があります",
+    "confirm_password_validation_message": "確認用パスワードは新しいパスワードと一致する必要があります"
+  }
+  
