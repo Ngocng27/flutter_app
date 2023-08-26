@@ -12,6 +12,10 @@ dependencies:
   intl: ^0.18.0 # Update the intl version to match the flutter_localizations version
   cupertino_icons: ^1.0.2
   provider: ^6.0.5
+  font_awesome_flutter: ^10.2.2
+  url_launcher: ^6.0.13  # Use the latest version of url_launcher
+  
+
 
 dev_dependencies:
   flutter_test:

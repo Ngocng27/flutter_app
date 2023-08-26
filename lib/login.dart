@@ -3,7 +3,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_app/signup.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter_localizations/flutter_localizations.dart'; // Add this import for localization support
+import 'package:url_launcher/url_launcher.dart';
 import 'main.dart';
 import 'translations.dart';
 
@@ -20,7 +22,13 @@ class LoginScreen extends StatefulWidget{
     MyApp.setLocale(context, locale);
   }
 
-
+Future<void> launchURL(String url) async {
+  if (await canLaunch(url)) {
+    await launch(url);
+  } else {
+    throw 'Could not launch $url';
+  }
+}
 
 }
 
@@ -300,6 +308,20 @@ class _LoginScreenState extends State<LoginScreen> {
  
 
   @override
+  void _launchGmailLogin() async {
+    final String gmailUrl = 'https://www.gmail.com'; // Replace with your Gmail login URL
+    await launchURL(gmailUrl);
+  }
+   void _launchFacebookLogin() async {
+  final String facebookUrl = 'https://www.facebook.com/'; // Replace with your Facebook login URL
+  await launchURL(facebookUrl);
+}
+
+
+  void _launchLinkedInLogin() async {
+    final String linkedInUrl = 'https://www.linkedin.com'; // Replace with your LinkedIn login URL
+    await launchURL(linkedInUrl);
+  }
 Widget build(BuildContext context) {
   return Scaffold(
     appBar: AppBar(
@@ -333,7 +355,7 @@ Widget build(BuildContext context) {
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
                     colors: [
-                      Color(0xFFB2EBF2),
+                      Color(0xFFB2BEF2),
                       Color(0xFF80DEEA),
                       Color(0xFF4DB6AC),
                       Color(0xFF26C69A),
@@ -359,6 +381,64 @@ Widget build(BuildContext context) {
                       buildForgotPassBtn(),
                       buildRememberCb(),
                       buildLoginBtn(),
+                      // Add social media icons below the login button
+             Padding(
+              padding: EdgeInsets.symmetric(vertical: 10), // Adjust vertical spacing
+              child: Text(
+                "━━ OR ━━",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: 20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  InkWell(
+                    onTap: () {
+                      // Handle the Gmail sign-in here
+                launchURL('https://mail.google.com/mail'); // Replace with the Gmail login URL
+
+                    },
+                    child: FaIcon(
+                      FontAwesomeIcons.google,
+                      size: 36,
+                      color: Colors.blue,
+                    ),
+                  ),
+                  SizedBox(width: 20),
+                  InkWell(
+                    onTap: () {
+                      // Handle the Facebook sign-in here
+                   launchURL('https://www.facebook.com'); // Replace with the LinkedIn login URL
+
+                    },
+                    child: FaIcon(
+                      FontAwesomeIcons.facebook,
+                      size: 36,
+                      color: Colors.blue,
+                    ),
+                  ),
+                  SizedBox(width: 20),
+                  InkWell(
+                    onTap: () {
+                      // Handle the LinkedIn sign-in here
+                  launchURL('https://www.linkedin.com'); // Replace with the LinkedIn login URL
+
+                    },
+                    child: FaIcon(
+                      FontAwesomeIcons.linkedin,
+                      size: 36,
+                      color: Colors.blue,
+                    ),
+                  ),
+                ],
+              ),
+            ),
                       buildSignUpBtn(context),
                     ],
                   ),

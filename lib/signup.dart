@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'home_page.dart';
 import 'main.dart'; // Import your main.dart for MyApp.setLocale
@@ -9,6 +11,14 @@ class SignUpScreen extends StatefulWidget {
   @override
   _SignUpState createState() => _SignUpState();
 }
+Future<void> launchURL(String url) async {
+  if (await canLaunch(url)) {
+    await launch(url);
+  } else {
+    throw 'Could not launch $url';
+  }
+}
+
 
 class _SignUpState extends State<SignUpScreen> {
   TextEditingController _passwordController = TextEditingController();
@@ -267,7 +277,20 @@ class _SignUpState extends State<SignUpScreen> {
     _confirmPasswordController.dispose();
     super.dispose();
   }
+  void _launchGmailLogin() async {
+    final String gmailUrl = 'https://www.gmail.com'; // Replace with your Gmail login URL
+    await launchURL(gmailUrl);
+  }
+   void _launchFacebookLogin() async {
+  final String facebookUrl = 'https://www.facebook.com/'; // Replace with your Facebook login URL
+  await launchURL(facebookUrl);
+}
 
+
+  void _launchLinkedInLogin() async {
+    final String linkedInUrl = 'https://www.linkedin.com'; // Replace with your LinkedIn login URL
+    await launchURL(linkedInUrl);
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -311,7 +334,75 @@ class _SignUpState extends State<SignUpScreen> {
                       buildNewPassword(),
                       SizedBox(height: 10),
                       buildCreateAccBtn(),
-                      SizedBox(height: 10),
+                      
+                      Padding(
+              padding: EdgeInsets.symmetric(vertical: 10), // Adjust vertical spacing
+              child: Text(
+                "━━ OR ━━",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: 20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  InkWell(
+                    onTap: () {
+                      // Handle the Gmail sign-in here
+                      launchURL('https://mail.google.com/mail'); // Replace with the Gmail login URL
+
+                    },
+                    child: FaIcon(
+                      FontAwesomeIcons.google,
+                      size: 36,
+                      color: Colors.blue,
+                    ),
+                  ),
+                  SizedBox(width: 20),
+                  InkWell(
+                    onTap: () {
+                      // Handle the Facebook sign-in here
+                    launchURL('https://www.facebook.com'); // Replace with the LinkedIn login URL
+
+                    },
+                    child: FaIcon(
+                      FontAwesomeIcons.facebook,
+                      size: 36,
+                      color: Colors.blue,
+                    ),
+                  ),
+                  SizedBox(width: 20),
+                  InkWell(
+                    onTap: () {
+                      // Handle the LinkedIn sign-in here
+                    launchURL('https://www.linkedin.com'); // Replace with the LinkedIn login URL
+                    },
+                    child: FaIcon(
+                      FontAwesomeIcons.linkedin,
+                      size: 36,
+                      color: Colors.blue,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+             Padding(
+              padding: EdgeInsets.symmetric(vertical: 10), // Adjust vertical spacing
+              child: Text(
+                "Already had an account? ",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            SizedBox(height: 10),
                       ElevatedButton(
                         onPressed: () {
                           Navigator.pop(context); // Navigate back to the previous screen (LoginScreen)
